@@ -9,7 +9,14 @@
 #   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
 
 module.exports = (robot) ->
+  robot.hear /じゃんけん/, (msg) ->
+    msg.send msg.random ["グー","チョキ","パー"]
 
+  robot.hear /サイコロ/, (msg) ->
+    msg.send msg.random ["1","2","3","4","5","6"]
+
+  robot.hear /おみくじ/, (msg) ->
+    msg.send msg.random ["大凶","凶","末吉","小吉","中吉","大吉"]
   # robot.hear /badger/i, (msg) ->
   #   msg.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
   #
